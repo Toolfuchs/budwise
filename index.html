@@ -10,45 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#141a12;
-  --bg-2:#1a2117;
-  --surface:#1e271b;
-  --surface-2:#273123;
-  --line:rgba(172,222,150,.14);
-  --line-strong:rgba(172,222,150,.26);
-  --text:#f1f6ec;
-  --muted:#aebaa4;
-  --muted-2:#82907a;
-  --lime:#9bff4d;
-  --lime-deep:#6fda2c;
-  --gold:#f5c451;
-  --display:'Bricolage Grotesque',sans-serif;
-  --body:'Hanken Grotesk',sans-serif;
-  --r:18px;
-  --maxw:1180px;
+  --bg:#141a12;--bg-2:#1a2117;--surface:#1e271b;--surface-2:#273123;
+  --line:rgba(172,222,150,.14);--line-strong:rgba(172,222,150,.26);
+  --text:#f1f6ec;--muted:#aebaa4;--muted-2:#82907a;
+  --lime:#9bff4d;--lime-deep:#6fda2c;--gold:#f5c451;
+  --display:'Bricolage Grotesque',sans-serif;--body:'Hanken Grotesk',sans-serif;
+  --r:18px;--maxw:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--body);
-  font-size:17px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-body::before{
-  content:"";position:fixed;inset:0;z-index:-2;
-  background:
-    radial-gradient(950px 520px at 78% -8%, rgba(155,255,77,.18), transparent 60%),
-    radial-gradient(720px 600px at -5% 16%, rgba(111,218,44,.12), transparent 55%),
-    linear-gradient(180deg,var(--bg),var(--bg-2));
-}
-body::after{
-  content:"";position:fixed;inset:0;z-index:-1;opacity:.022;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(950px 520px at 78% -8%,rgba(155,255,77,.18),transparent 60%),radial-gradient(720px 600px at -5% 16%,rgba(111,218,44,.12),transparent 55%),linear-gradient(180deg,var(--bg),var(--bg-2))}
+body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.022;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .eyebrow{font-family:var(--body);font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);display:inline-flex;align-items:center;gap:8px}
@@ -60,13 +33,12 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;letter-spac
 .btn-ghost{border-color:var(--line-strong);color:var(--text);background:rgba(255,255,255,.03)}
 .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
 
-/* ---------- HEADER ---------- */
 header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(20,26,18,.78);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.03em}
 .logo .mark{width:34px;height:34px;flex:none}
 .logo b{color:var(--lime)}
-.nav-links{display:flex;gap:26px;font-size:.95rem;font-weight:500}
+.nav-links{display:flex;gap:24px;font-size:.94rem;font-weight:500}
 .nav-links a{color:var(--muted);transition:.2s;position:relative}
 .nav-links a:hover{color:var(--text)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--lime);transition:.25s;border-radius:2px}
@@ -74,11 +46,10 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rg
 .nav-cta{display:flex;align-items:center;gap:14px}
 .burger{display:none;background:none;border:0;color:var(--text);cursor:pointer}
 
-/* ---------- HERO ---------- */
 .hero{padding:80px 0 60px;position:relative}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
 .hero h1{font-size:clamp(2.5rem,5.2vw,4.4rem);margin:22px 0 20px}
-.hero h1 em{font-style:normal;color:var(--lime);position:relative}
+.hero h1 em{font-style:normal;color:var(--lime)}
 .hero p.lead{font-size:1.18rem;color:var(--muted);max-width:31em;margin-bottom:30px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
 .chip{font-size:.88rem;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(255,255,255,.03);color:var(--muted);transition:.2s;cursor:pointer}
@@ -89,8 +60,6 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rg
 .trust b{color:var(--text)}
 .avatars{display:flex}
 .avatars span{width:30px;height:30px;border-radius:50%;border:2px solid var(--bg);margin-left:-8px;background:linear-gradient(135deg,#3a6,#9bff4d)}
-
-/* hero card */
 .hero-card{background:linear-gradient(165deg,var(--surface-2),var(--surface));border:1px solid var(--line-strong);border-radius:24px;padding:24px;position:relative;box-shadow:0 40px 80px -42px rgba(0,0,0,.7);animation:float 7s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero-card .badge{position:absolute;top:-13px;left:24px;background:var(--gold);color:#1a1200;font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
@@ -107,13 +76,11 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rg
 .hc-price{font-family:var(--display);font-weight:700;font-size:1.5rem}
 .hc-price small{font-size:.8rem;color:var(--muted);font-weight:400}
 
-/* ---------- SECTION SHELL ---------- */
 section{padding:70px 0}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:38px;flex-wrap:wrap}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px;flex-wrap:wrap}
 .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem)}
-.sec-head p{color:var(--muted);max-width:36em;margin-top:10px}
+.sec-head p{color:var(--muted);max-width:38em;margin-top:10px}
 
-/* ---------- CATEGORIES ---------- */
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:16px}
 .cat{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px 20px;transition:.28s;position:relative;overflow:hidden}
 .cat:hover{transform:translateY(-6px);border-color:var(--line-strong);background:var(--surface-2)}
@@ -125,23 +92,13 @@ section{padding:70px 0}
 .cat:hover .arr{color:var(--lime);transform:translate(3px,-3px)}
 .cat .pill{position:absolute;top:18px;right:18px;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--lime);background:rgba(155,255,77,.14);padding:3px 8px;border-radius:6px}
 
-/* ---------- REZEPT / PROVIDERS ---------- */
-.prov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.prov{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:.28s;display:flex;flex-direction:column}
-.prov:hover{transform:translateY(-5px);border-color:var(--line-strong)}
-.prov .ptype{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:10px}
-.prov h3{font-size:1.3rem;margin-bottom:14px}
-.prov ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px;font-size:.92rem;color:var(--muted)}
-.prov ul li{display:flex;gap:9px;align-items:flex-start}
-.prov ul li::before{content:"›";color:var(--lime);font-weight:700}
-.prov .pfoot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px}
-.prov .pscore{font-family:var(--display);font-weight:700;font-size:1.2rem}
-.prov .pscore small{font-weight:400;font-size:.72rem;color:var(--muted-2);font-family:var(--body)}
-.note{font-size:.82rem;color:var(--muted-2);background:var(--surface);border:1px dashed var(--line-strong);border-radius:12px;padding:14px 18px;margin-top:20px;line-height:1.6}
-
-/* ---------- COMPARISON TABLE ---------- */
-.tbl-tools{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
-.tbl-tools button{font-family:var(--body);font-size:.85rem;font-weight:500;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
+.tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.tabs button{font-family:var(--body);font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
+.tabs button.on{border-color:var(--lime);color:#0a0d0a;background:var(--lime)}
+.tabs button:not(.on):hover{border-color:var(--lime);color:var(--text)}
+.tbl-tools{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;align-items:center}
+.tbl-tools .lbl{font-size:.8rem;color:var(--muted-2);margin-right:4px}
+.tbl-tools button{font-family:var(--body);font-size:.84rem;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
 .tbl-tools button.on,.tbl-tools button:hover{border-color:var(--lime);color:var(--text);background:rgba(155,255,77,.1)}
 .table{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .trow{display:grid;grid-template-columns:48px 2.4fr 1fr 1.3fr 1fr 150px;align-items:center;gap:16px;padding:18px 22px;border-bottom:1px solid var(--line);transition:.2s}
@@ -153,40 +110,49 @@ section{padding:70px 0}
 .rank{font-family:var(--display);font-weight:700;font-size:1.3rem;color:var(--muted-2)}
 .rank.top{color:var(--gold)}
 .prodcell{display:flex;flex-direction:column;gap:4px}
-.prodcell .pn{font-family:var(--display);font-weight:700;font-size:1.08rem;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-.tag{font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+.prodcell .pn{font-family:var(--display);font-weight:700;font-size:1.06rem;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.tag{font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
 .tag.win{background:var(--gold);color:#1a1200}
 .tag.deal{background:rgba(155,255,77,.18);color:var(--lime)}
 .prodcell .pb{color:var(--muted-2);font-size:.82rem}
-.scorepill{font-family:var(--display);font-weight:700;font-size:1.15rem}
+.scorepill{font-family:var(--display);font-weight:700;font-size:1.12rem}
 .scorepill small{display:block;font-family:var(--body);font-weight:400;font-size:.7rem;color:var(--muted-2);letter-spacing:.05em}
-.hl{font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.hl{font-size:.84rem;color:var(--muted);display:flex;flex-direction:column;gap:3px}
 .hl span{display:flex;gap:6px;align-items:center}
 .hl span::before{content:"✓";color:var(--lime);font-weight:700}
-.price{font-family:var(--display);font-weight:700;font-size:1.18rem}
+.price{font-family:var(--display);font-weight:700;font-size:1.16rem}
 .price small{display:block;font-weight:400;font-size:.72rem;color:var(--muted-2);font-family:var(--body)}
-.trow .btn{padding:11px 18px;font-size:.85rem;width:100%;justify-content:center}
+.trow .btn{padding:11px 16px;font-size:.84rem;width:100%;justify-content:center}
+.aff-note{color:var(--muted-2);font-size:.8rem;margin-top:14px}
 
-/* ---------- REVIEWS ---------- */
+.note{font-size:.82rem;color:var(--muted-2);background:var(--surface);border:1px dashed var(--line-strong);border-radius:12px;padding:14px 18px;margin-top:20px;line-height:1.6}
+
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:.28s}
 .rev:hover{transform:translateY(-6px);border-color:var(--line-strong)}
 .rev-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .rev .cat-lbl{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);font-weight:600}
-.rev h3{font-size:1.25rem;margin-bottom:8px}
-.rev p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
+.rev h3{font-size:1.22rem;margin-bottom:8px}
+.rev p{color:var(--muted);font-size:.93rem;margin-bottom:18px}
 .rev .meta{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted-2);border-top:1px solid var(--line);padding-top:14px}
 .rev .read{color:var(--lime);font-weight:600;display:inline-flex;gap:6px;transition:.2s}
 .rev:hover .read{gap:11px}
 
-/* ---------- HOW / TRUST ---------- */
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .how .step{padding:28px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(165deg,var(--surface-2),transparent)}
 .how .num{font-family:var(--display);font-weight:700;font-size:2.4rem;color:var(--lime);line-height:1;margin-bottom:14px}
 .how h3{font-size:1.18rem;margin-bottom:8px}
 .how p{color:var(--muted);font-size:.92rem}
 
-/* ---------- NEWSLETTER ---------- */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 22px;transition:.2s}
+.faq details[open]{border-color:var(--line-strong)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-family:var(--display);font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--lime);font-size:1.4rem;transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--muted);font-size:.94rem;padding:0 0 20px}
+
 .news{background:linear-gradient(135deg,rgba(155,255,77,.14),rgba(111,218,44,.05));border:1px solid var(--line-strong);border-radius:26px;padding:54px;text-align:center;position:relative;overflow:hidden}
 .news h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:12px}
 .news p{color:var(--muted);max-width:34em;margin:0 auto 26px}
@@ -194,7 +160,6 @@ section{padding:70px 0}
 .news input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(0,0,0,.25);color:var(--text);font-family:var(--body);font-size:.95rem}
 .news input:focus{outline:none;border-color:var(--lime)}
 
-/* ---------- FOOTER ---------- */
 footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
 .foot-grid h4{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px;font-family:var(--body);font-weight:600}
@@ -205,36 +170,28 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
 .disclaimer b{color:var(--muted)}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:24px;font-size:.85rem;color:var(--muted-2);flex-wrap:wrap;gap:12px}
 
-/* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
-/* ---------- RESPONSIVE ---------- */
 @media(max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .hero-card{max-width:420px}
-  .prov-grid{grid-template-columns:1fr}
   .rev-grid,.how{grid-template-columns:1fr}
   .nav-links{display:none}
   .burger{display:block}
   .trow{grid-template-columns:34px 1.6fr 70px 110px;gap:10px}
   .trow .hl,.trow.head .h-hl{display:none}
   .trow .btn{grid-column:1/-1;width:100%}
-  .trow .pricecell{display:none}
-  .trow.head .h-price{display:none}
+  .trow .pricecell,.trow.head .h-price{display:none}
 }
-@media(max-width:560px){
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .news{padding:34px 22px}
-}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr 1fr}.news{padding:34px 22px}}
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#">
+    <a class="logo" href="#top">
       <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 3l14.7 8.5v17L20 37 5.3 28.5v-17L20 3z" stroke="#9bff4d" stroke-width="2" fill="rgba(155,255,77,.06)"/>
         <path d="M20 11c2.5 3 2.5 6 0 9-2.5-3-2.5-6 0-9zM20 20c2.8 1.4 4 3.8 3.6 7.2-3-.8-4.4-3.4-3.6-7.2zM20 20c-2.8 1.4-4 3.8-3.6 7.2 3-.8 4.4-3.4 3.6-7.2z" fill="#9bff4d"/>
@@ -245,7 +202,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
     <nav class="nav-links">
       <a href="#rezept">Cannabis auf Rezept</a>
       <a href="#kategorien">Kategorien</a>
-      <a href="#bestenliste">Bestenliste</a>
+      <a href="#bestenliste">Produkt-Vergleich</a>
       <a href="#tests">Tests</a>
       <a href="#ratgeber">Ratgeber</a>
     </nav>
@@ -258,7 +215,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<a id="top"></a>
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -269,9 +226,9 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
         <span class="chip" data-go="rezept">Cannabis auf Rezept</span>
         <span class="chip" data-go="rezept">Apotheken</span>
         <span class="chip" data-go="bestenliste">CBD-Öl</span>
-        <span class="chip" data-go="kategorien">Vaporizer</span>
-        <span class="chip" data-go="kategorien">Seeds</span>
-        <span class="chip" data-go="kategorien">Grow</span>
+        <span class="chip" data-go="bestenliste">Vaporizer</span>
+        <span class="chip" data-go="bestenliste">Seeds</span>
+        <span class="chip" data-go="bestenliste">Grow</span>
       </div>
       <div class="hero-cta">
         <a href="#rezept" class="btn btn-primary">Cannabis auf Rezept vergleichen →</a>
@@ -282,14 +239,10 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
         <div><span class="stars">★★★★★</span><br><b>120+ Produkte & Anbieter</b> geprüft</div>
       </div>
     </div>
-
     <div class="hero-card" style="--p:96">
       <span class="badge">★ Empfehlung 2026</span>
       <div class="hc-top">
-        <div>
-          <div class="hc-prod">Cannabis auf Rezept</div>
-          <div class="hc-brand">Telemedizin · Anbieter-Check</div>
-        </div>
+        <div><div class="hc-prod">Cannabis auf Rezept</div><div class="hc-brand">Telemedizin · Anbieter-Check</div></div>
         <div class="ring" style="--p:96"><i>9,6</i></div>
       </div>
       <div class="hc-bars">
@@ -299,208 +252,102 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
         <div class="bar"><span>Service</span><div class="track"><div class="fill" style="width:95%"></div></div></div>
       </div>
       <div class="hc-foot">
-        <div class="hc-price">9 Anbieter<br><small>im Direktvergleich</small></div>
+        <div class="hc-price">4 Anbieter<br><small>im Direktvergleich</small></div>
         <a href="#rezept" class="btn btn-primary">Vergleich →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CATEGORIES ===== -->
 <section id="kategorien">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">Kategorien</span>
-        <h2>Wonach suchst du?</h2>
-        <p>Vom Rezept bis zum Zubehör — jede Kategorie mit eigener Bestenliste, Daten und ehrlichem Urteil.</p>
-      </div>
+      <div><span class="eyebrow">Kategorien</span><h2>Wonach suchst du?</h2>
+      <p>Vom Rezept bis zum Zubehör — jede Kategorie mit eigener Bestenliste, Daten und ehrlichem Urteil.</p></div>
     </div>
     <div class="cat-grid">
-      <a class="cat feat reveal" href="#rezept">
-        <span class="pill">Neu</span>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3h8v4H8zM6 7h12v14H6z"/><path d="M12 11v6M9 14h6"/></svg></div>
-        <h3>Cannabis auf Rezept</h3><span>9 Telemedizin-Anbieter</span>
-      </a>
-      <a class="cat feat reveal" href="#rezept">
-        <span class="pill">Neu</span>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h16v11H4z"/><path d="M4 9l2-5h12l2 5M12 13v3M10.5 14.5h3"/></svg></div>
-        <h3>Versand-Apotheken</h3><span>Cannabis-Apotheken</span>
-      </a>
-      <a class="cat reveal" href="#bestenliste">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6v4l3 5v7a2 2 0 01-2 2H8a2 2 0 01-2-2v-7l3-5V3z"/><path d="M6 14h12"/></svg></div>
-        <span class="arr">↗</span><h3>CBD-Öl</h3><span>32 Produkte</span>
-      </a>
-      <a class="cat reveal" href="#bestenliste">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M12 6v4"/></svg></div>
-        <span class="arr">↗</span><h3>Vaporizer</h3><span>24 Produkte</span>
-      </a>
-      <a class="cat reveal" href="#bestenliste">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M4 7l3-4h10l3 4M9 12h6"/></svg></div>
-        <span class="arr">↗</span><h3>Grow-Boxen</h3><span>18 Produkte</span>
-      </a>
-      <a class="cat reveal" href="#bestenliste">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="13" r="6"/><path d="M12 7V3M9 4l3 3 3-3"/></svg></div>
-        <span class="arr">↗</span><h3>Seeds</h3><span>27 Sorten</span>
-      </a>
-      <a class="cat reveal" href="#bestenliste">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></div>
-        <span class="arr">↗</span><h3>Zubehör</h3><span>40+ Artikel</span>
-      </a>
+      <a class="cat feat reveal" href="#rezept"><span class="pill">Neu</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3h8v4H8zM6 7h12v14H6z"/><path d="M12 11v6M9 14h6"/></svg></div><h3>Cannabis auf Rezept</h3><span>4 Telemedizin-Anbieter</span></a>
+      <a class="cat feat reveal" href="#rezept"><span class="pill">Neu</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h16v11H4z"/><path d="M4 9l2-5h12l2 5M12 13v3M10.5 14.5h3"/></svg></div><h3>Versand-Apotheken</h3><span>Cannabis-Apotheken</span></a>
+      <a class="cat reveal" href="#bestenliste" data-tab="cbd"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6v4l3 5v7a2 2 0 01-2 2H8a2 2 0 01-2-2v-7l3-5V3z"/><path d="M6 14h12"/></svg></div><span class="arr">↗</span><h3>CBD-Öl</h3><span>5 Top-Marken</span></a>
+      <a class="cat reveal" href="#bestenliste" data-tab="vaporizer"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M12 6v4"/></svg></div><span class="arr">↗</span><h3>Vaporizer</h3><span>4 Geräte</span></a>
+      <a class="cat reveal" href="#bestenliste" data-tab="grow"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M4 7l3-4h10l3 4M9 12h6"/></svg></div><span class="arr">↗</span><h3>Grow-Boxen</h3><span>4 Sets</span></a>
+      <a class="cat reveal" href="#bestenliste" data-tab="seeds"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="13" r="6"/><path d="M12 7V3M9 4l3 3 3-3"/></svg></div><span class="arr">↗</span><h3>Seeds</h3><span>4 Sorten</span></a>
     </div>
   </div>
 </section>
 
-<!-- ===== CANNABIS AUF REZEPT ===== -->
 <section id="rezept">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">Cannabis auf Rezept</span>
-        <h2>Telemedizin & Apotheke im Überblick</h2>
-        <p>Seit der Legalisierung führt der legale Weg zu Medizinal-Cannabis über ärztliche Verschreibung. Wir geben einen neutralen, redaktionellen Überblick über den Ablauf der Anbieter — keine Kauf- oder Therapieempfehlung.</p>
-      </div>
+      <div><span class="eyebrow">Cannabis auf Rezept</span><h2>Telemedizin-Anbieter im Vergleich</h2>
+      <p>Der legale Weg zu Medizinal-Cannabis führt über ärztliche Verschreibung. Neutraler, redaktioneller Überblick zum Ablauf — keine Therapieempfehlung. Sortierbar.</p></div>
     </div>
-    <div class="prov-grid">
-      <article class="prov reveal">
-        <div class="ptype">Telemedizin</div>
-        <h3>Anbieter mit Express-Ablauf</h3>
-        <ul>
-          <li>Online-Fragebogen & Video-Sprechstunde</li>
-          <li>Rezept (bei Eignung) digital oder zur Apotheke</li>
-          <li>Schnelle Bearbeitung, oft 24–48 h</li>
-          <li>Transparente Kostenübersicht</li>
-        </ul>
-        <div class="pfoot">
-          <span class="pscore">9,4<small>Ablauf & Service</small></span>
-          <a href="#" class="btn btn-ghost">Mehr erfahren →</a>
-        </div>
-      </article>
-      <article class="prov reveal">
-        <div class="ptype">Telemedizin</div>
-        <h3>Anbieter mit großem Sortiment</h3>
-        <ul>
-          <li>Breite Auswahl an Sorten & Apotheken</li>
-          <li>Preisvergleich vor der Einlösung</li>
-          <li>Begleitung durch erfahrene Ärzt:innen</li>
-          <li>Folge-Rezepte unkompliziert</li>
-        </ul>
-        <div class="pfoot">
-          <span class="pscore">9,1<small>Auswahl & Preis</small></span>
-          <a href="#" class="btn btn-ghost">Mehr erfahren →</a>
-        </div>
-      </article>
-      <article class="prov reveal">
-        <div class="ptype">Versand-Apotheke</div>
-        <h3>Apotheken mit Cannabis-Versand</h3>
-        <ul>
-          <li>Einlösung von Privat- & Kassenrezept</li>
-          <li>Geprüfte Medizinal-Cannabis-Blüten</li>
-          <li>Diskreter, schneller Versand</li>
-          <li>Pharmazeutische Beratung</li>
-        </ul>
-        <div class="pfoot">
-          <span class="pscore">9,0<small>Versand & Beratung</small></span>
-          <a href="#" class="btn btn-ghost">Mehr erfahren →</a>
-        </div>
-      </article>
+    <div class="tbl-tools reveal"><span class="lbl">Sortieren:</span>
+      <button class="on" data-tsort="rank">Empfehlung</button>
+      <button data-tsort="score">Bewertung</button>
+      <button data-tsort="price">Kosten</button>
     </div>
-    <div class="note reveal">
-      <b>Rechtlicher Hinweis:</b> Medizinal-Cannabis ist verschreibungspflichtig. Die Eignung entscheidet ausschließlich ärztliches Fachpersonal. Diese Übersicht ist redaktionell und unabhängig, enthält keine Heilversprechen und ersetzt keine ärztliche Beratung (§ HWG). Cannabis-Konsum kann Risiken bergen — Inhalte richten sich an Personen ab 18 Jahren.
+    <div class="table reveal" id="telemed">
+      <div class="trow head"><span>#</span><span>Anbieter</span><span data-tsort="score">Score ▾</span><span class="h-hl">Ablauf</span><span class="h-price" data-tsort="price">Kosten ab</span><span></span></div>
     </div>
+    <div class="note reveal"><b>Rechtlicher Hinweis (HWG):</b> Medizinal-Cannabis ist verschreibungspflichtig; über die Eignung entscheidet ausschließlich ärztliches Fachpersonal. Diese Übersicht ist redaktionell, unabhängig und enthält keine Heilversprechen. Alle gelisteten Anbieter führen ein öffentliches Affiliate-Programm; mit ↗ markierte Links sind Partnerlinks. Inhalte ab 18 Jahren.</div>
   </div>
 </section>
 
-<!-- ===== BESTENLISTE / COMPARISON ===== -->
 <section id="bestenliste">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">Bestenliste 2026</span>
-        <h2>Die Top CBD-Öle im Test</h2>
-        <p>Sortierbar nach dem, was dir wichtig ist. Alle Preise täglich auf Bestpreis geprüft.</p>
-      </div>
+      <div><span class="eyebrow">Bestenliste 2026</span><h2>Produkte im Direktvergleich</h2>
+      <p>Wähle eine Kategorie und sortiere nach dem, was dir wichtig ist. Alle Marken mit aktivem Partnerprogramm — Preise täglich geprüft.</p></div>
     </div>
-    <div class="tbl-tools reveal">
+    <div class="tabs reveal" id="tabs">
+      <button class="on" data-tab="cbd">CBD-Öl</button>
+      <button data-tab="vaporizer">Vaporizer</button>
+      <button data-tab="seeds">Seeds</button>
+      <button data-tab="grow">Grow-Sets</button>
+    </div>
+    <div class="tbl-tools reveal"><span class="lbl">Sortieren:</span>
       <button class="on" data-sort="rank">Empfehlung</button>
       <button data-sort="score">Beste Bewertung</button>
       <button data-sort="price">Günstigster Preis</button>
     </div>
     <div class="table reveal" id="table">
-      <div class="trow head">
-        <span>#</span>
-        <span>Produkt</span>
-        <span data-sort="score">Score ▾</span>
-        <span class="h-hl">Highlights</span>
-        <span class="h-price" data-sort="price">Preis ▾</span>
-        <span></span>
-      </div>
+      <div class="trow head"><span>#</span><span>Produkt</span><span data-sort="score">Score ▾</span><span class="h-hl">Highlights</span><span class="h-price" data-sort="price">Preis ▾</span><span></span></div>
     </div>
-    <p style="color:var(--muted-2);font-size:.8rem;margin-top:14px">* Mit ↗ markierte Links sind Affiliate-Links. Kaufst du darüber, erhalten wir eine Provision — für dich ohne Aufpreis. Das beeinflusst unsere Bewertungen nicht.</p>
+    <p class="aff-note">* Mit ↗ markierte Links sind Affiliate-Links. Kaufst du darüber, erhalten wir eine Provision — für dich ohne Aufpreis. Das beeinflusst unsere Bewertungen nicht. Beispiel-Daten; finale Preise & Partnerlinks nach Anmeldung der Programme.</p>
   </div>
 </section>
 
-<!-- ===== REVIEWS ===== -->
 <section id="tests">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">Aktuelle Tests</span>
-        <h2>Frisch geprüft</h2>
-        <p>Ausführliche Einzeltests mit Daten, Langzeit-Eindruck und ehrlichem Fazit.</p>
-      </div>
+      <div><span class="eyebrow">Aktuelle Tests</span><h2>Frisch geprüft</h2>
+      <p>Ausführliche Einzeltests mit Daten, Langzeit-Eindruck und ehrlichem Fazit.</p></div>
       <a href="#" class="btn btn-ghost">Alle Tests →</a>
     </div>
     <div class="rev-grid">
-      <article class="rev reveal">
-        <div class="rev-top"><span class="cat-lbl">Rezept</span><div class="ring" style="--p:94"><i>9,4</i></div></div>
-        <h3>Cannabis auf Rezept: Anbieter-Vergleich</h3>
-        <p>Ablauf, Tempo, Kosten und Service der wichtigsten Telemedizin-Plattformen — neutral gegenübergestellt.</p>
-        <div class="meta"><span>11 Min · 20.06.2026</span><a class="read" href="#">Lesen →</a></div>
-      </article>
-      <article class="rev reveal">
-        <div class="rev-top"><span class="cat-lbl">Vaporizer</span><div class="ring" style="--p:94"><i>9,4</i></div></div>
-        <h3>Mighty+ im Dauertest</h3>
-        <p>Nach 3 Monaten täglichem Einsatz: Dampfqualität, Akku, Reinigung — was überzeugt und was nervt.</p>
-        <div class="meta"><span>12 Min · 18.06.2026</span><a class="read" href="#">Lesen →</a></div>
-      </article>
-      <article class="rev reveal">
-        <div class="rev-top"><span class="cat-lbl">CBD-Öl</span><div class="ring" style="--p:88"><i>8,8</i></div></div>
-        <h3>5 Vollspektrum-Öle im Labor</h3>
-        <p>Wir haben fünf Bestseller ins Labor geschickt. Cannabinoid-Gehalt vs. Versprechen — überraschend.</p>
-        <div class="meta"><span>9 Min · 11.06.2026</span><a class="read" href="#">Lesen →</a></div>
-      </article>
+      <article class="rev reveal"><div class="rev-top"><span class="cat-lbl">Rezept</span><div class="ring" style="--p:94"><i>9,4</i></div></div><h3>Cannabis auf Rezept: Anbieter-Vergleich</h3><p>Ablauf, Tempo, Kosten und Service der wichtigsten Telemedizin-Plattformen — neutral gegenübergestellt.</p><div class="meta"><span>11 Min · 20.06.2026</span><a class="read" href="#">Lesen →</a></div></article>
+      <article class="rev reveal"><div class="rev-top"><span class="cat-lbl">Vaporizer</span><div class="ring" style="--p:95"><i>9,5</i></div></div><h3>Storz &amp; Bickel Mighty+ im Dauertest</h3><p>3 Monate täglicher Einsatz: Dampfqualität, Akku, Reinigung — was überzeugt und was nervt.</p><div class="meta"><span>12 Min · 18.06.2026</span><a class="read" href="#">Lesen →</a></div></article>
+      <article class="rev reveal"><div class="rev-top"><span class="cat-lbl">CBD-Öl</span><div class="ring" style="--p:88"><i>8,8</i></div></div><h3>5 Vollspektrum-Öle im Labor</h3><p>Fünf Bestseller ins Labor geschickt. Cannabinoid-Gehalt vs. Versprechen — überraschend.</p><div class="meta"><span>9 Min · 11.06.2026</span><a class="read" href="#">Lesen →</a></div></article>
     </div>
   </div>
 </section>
 
-<!-- ===== HOW WE TEST ===== -->
 <section id="so">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">So testen wir</span>
-        <h2>Keine bezahlten Plätze. Punkt.</h2>
-        <p>Unser Score basiert auf messbaren Daten — nicht darauf, wer am meisten zahlt.</p>
-      </div>
-    </div>
+    <div class="sec-head reveal"><div><span class="eyebrow">So testen wir</span><h2>Keine bezahlten Plätze. Punkt.</h2>
+    <p>Unser Score basiert auf messbaren Daten — nicht darauf, wer am meisten zahlt.</p></div></div>
     <div class="how">
-      <div class="step reveal"><div class="num">01</div><h3>Recherchieren & prüfen</h3><p>Wir vergleichen Anbieter & Produkte anhand öffentlich nachvollziehbarer Kriterien — unabhängig.</p></div>
-      <div class="step reveal"><div class="num">02</div><h3>Messen & bewerten</h3><p>28 Kriterien pro Kategorie, bei Produkten reale Tests, bei Anbietern Ablauf, Tempo & Transparenz.</p></div>
+      <div class="step reveal"><div class="num">01</div><h3>Recherchieren & prüfen</h3><p>Anbieter & Produkte anhand öffentlich nachvollziehbarer Kriterien vergleichen — unabhängig.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Messen & bewerten</h3><p>28 Kriterien pro Kategorie, reale Produkttests, bei Anbietern Ablauf, Tempo & Transparenz.</p></div>
       <div class="step reveal"><div class="num">03</div><h3>Offenlegen</h3><p>Transparenter Score, ehrliches Pro/Contra. Affiliate-Links kennzeichnen wir immer.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== RATGEBER ===== -->
 <section id="ratgeber">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">Ratgeber</span>
-        <h2>Erst verstehen, dann entscheiden</h2>
-      </div>
-    </div>
+    <div class="sec-head reveal"><div><span class="eyebrow">Ratgeber</span><h2>Erst verstehen, dann entscheiden</h2></div></div>
     <div class="rev-grid">
       <article class="rev reveal"><span class="cat-lbl">Recht</span><h3 style="margin-top:10px">Cannabis-Legalisierung: Was gilt 2026?</h3><p>CanG, Eigenanbau, Cannabis-Clubs, Rezept — der aktuelle Stand verständlich erklärt.</p><div class="meta"><span>Aktualisiert 06/2026</span><a class="read" href="#">Lesen →</a></div></article>
       <article class="rev reveal"><span class="cat-lbl">Rezept</span><h3 style="margin-top:10px">Cannabis auf Rezept: So läuft es ab</h3><p>Von der Sprechstunde bis zur Apotheke — Schritt für Schritt, mit Kosten und Tipps.</p><div class="meta"><span>Aktualisiert 06/2026</span><a class="read" href="#">Lesen →</a></div></article>
@@ -509,7 +356,18 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
   </div>
 </section>
 
-<!-- ===== NEWSLETTER ===== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">FAQ</span><h2>Häufige Fragen</h2></div></div>
+    <div class="faq reveal">
+      <details open><summary>Ist Cannabis in Deutschland legal?</summary><p>Seit Inkrafttreten des CanG ist der Besitz und Eigenanbau für Erwachsene in definierten Grenzen erlaubt. Medizinal-Cannabis ist verschreibungspflichtig und nur mit ärztlichem Rezept erhältlich. Maßgeblich ist immer die aktuelle Gesetzeslage.</p></details>
+      <details><summary>Wie bekomme ich Cannabis auf Rezept?</summary><p>Über Telemedizin-Anbieter füllst du einen medizinischen Fragebogen aus und sprichst mit ärztlichem Fachpersonal. Bei Eignung wird ein Rezept ausgestellt, das du in einer Apotheke einlöst. Über die Eignung entscheidet ausschließlich der Arzt bzw. die Ärztin.</p></details>
+      <details><summary>Sind CBD-Produkte dasselbe wie Cannabis auf Rezept?</summary><p>Nein. CBD-Produkte (unter den gesetzlichen THC-Grenzwerten) sind frei verkäuflich und keine Arzneimittel. Medizinal-Cannabis enthält THC und ist verschreibungspflichtig.</p></details>
+      <details><summary>Wie verdient Budwise Geld?</summary><p>Über Affiliate-Provisionen: Kaufst oder registrierst du dich über einen unserer Partnerlinks (↗), erhalten wir eine Provision — für dich ohne Aufpreis. Das beeinflusst weder unsere Bewertungen noch die Reihenfolge.</p></details>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="news reveal">
@@ -524,81 +382,123 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-about">
-        <a class="logo" href="#">
-          <svg class="mark" viewBox="0 0 40 40" fill="none"><path d="M20 3l14.7 8.5v17L20 37 5.3 28.5v-17L20 3z" stroke="#9bff4d" stroke-width="2" fill="rgba(155,255,77,.06)"/><path d="M20 11c2.5 3 2.5 6 0 9-2.5-3-2.5-6 0-9z" fill="#9bff4d"/></svg>
-          <span>bud<b>wise</b></span>
-        </a>
+        <a class="logo" href="#top"><svg class="mark" viewBox="0 0 40 40" fill="none"><path d="M20 3l14.7 8.5v17L20 37 5.3 28.5v-17L20 3z" stroke="#9bff4d" stroke-width="2" fill="rgba(155,255,77,.06)"/><path d="M20 11c2.5 3 2.5 6 0 9-2.5-3-2.5-6 0-9z" fill="#9bff4d"/></svg><span>bud<b>wise</b></span></a>
         <p>Unabhängige Vergleiche rund um Cannabis — Rezept, Apotheke, CBD & Equipment. Damit du klüger vergleichst und besser entscheidest.</p>
       </div>
       <div><h4>Vergleiche</h4><a href="#rezept">Cannabis auf Rezept</a><a href="#rezept">Versand-Apotheken</a><a href="#bestenliste">CBD-Öl</a><a href="#bestenliste">Vaporizer</a><a href="#bestenliste">Seeds & Grow</a></div>
-      <div><h4>Budwise</h4><a href="#so">So testen wir</a><a href="#">Über uns</a><a href="#">Redaktion</a><a href="#">Kontakt</a></div>
-      <div><h4>Rechtliches</h4><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Affiliate-Hinweis</a><a href="#">Cookie-Einstellungen</a></div>
+      <div><h4>Budwise</h4><a href="#so">So testen wir</a><a href="#faq">FAQ</a><a href="#ratgeber">Ratgeber</a><a href="#">Kontakt</a></div>
+      <div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="#faq">Affiliate-Hinweis</a><a href="#">Cookie-Einstellungen</a></div>
     </div>
-    <div class="disclaimer">
-      <b>Wichtiger Hinweis:</b> Budwise bietet redaktionelle, unabhängige Informationen und ersetzt keine ärztliche oder rechtliche Beratung. Medizinal-Cannabis ist verschreibungspflichtig; über die Eignung entscheidet ausschließlich ärztliches Fachpersonal. CBD-Produkte sind keine Arzneimittel. Inhalte richten sich ausschließlich an volljährige Personen (18+) und gelten im Rahmen der jeweils geltenden Gesetze. Bitte informiere dich über die aktuelle Rechtslage.
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Budwise. Alle Rechte vorbehalten.</span>
-      <span>Unabhängig · ohne bezahlte Platzierungen · made in Germany</span>
-    </div>
+    <div class="disclaimer"><b>Wichtiger Hinweis:</b> Budwise bietet redaktionelle, unabhängige Informationen und ersetzt keine ärztliche oder rechtliche Beratung. Medizinal-Cannabis ist verschreibungspflichtig; über die Eignung entscheidet ausschließlich ärztliches Fachpersonal. CBD-Produkte sind keine Arzneimittel. Inhalte richten sich ausschließlich an volljährige Personen (18+) und gelten im Rahmen der jeweils geltenden Gesetze. Bitte informiere dich über die aktuelle Rechtslage.</div>
+    <div class="foot-bottom"><span>© 2026 Budwise. Alle Rechte vorbehalten.</span><span>Unabhängig · ohne bezahlte Platzierungen · made in Germany</span></div>
   </div>
 </footer>
 
 <script>
-/* ---------- data ---------- */
-const products=[
-  {name:"GreenLeaf CBD 15%",brand:"Vollspektrum · 10 ml",score:9.6,price:39.90,badge:"win",hl:["Lab-getestet 99%","Mild im Geschmack"]},
-  {name:"PureHemp 10%",brand:"Bio · 10 ml",score:9.1,price:29.90,badge:"deal",hl:["Bestes Preis/Leistung","DE-Anbau"]},
-  {name:"NordicOil Premium 20%",brand:"Vollspektrum · 10 ml",score:8.9,price:54.90,badge:"",hl:["Höchste Konzentration","Schneller Effekt"]},
-  {name:"CannaVital Bio 5%",brand:"Einsteiger · 10 ml",score:8.4,price:19.90,badge:"",hl:["Ideal für Einsteiger","Vegan"]},
-  {name:"HempFlow Aktiv 12%",brand:"Sport · 10 ml",score:8.1,price:34.90,badge:"",hl:["Mit Terpenen","Neutraler Geschmack"]},
+/* ===== Telemedizin (nur Anbieter mit Affiliate-Programm) ===== */
+const telemed=[
+  {name:"DoktorABC",net:"Awin · 5 €/Sale",score:9.4,price:14.90,badge:"win",hl:["Ärztl. Online-Sprechstunde","Rezept oft in 24–48 h"]},
+  {name:"bloomwell",net:"SaleGains/Webgains",score:9.1,price:0,badge:"deal",hl:["Großes Apotheken-Netz","Etablierter Anbieter"]},
+  {name:"Privatrezept.net",net:"Adcell · Lead",score:8.7,price:0,badge:"",hl:["Schlanker Ablauf","Schnelle Bearbeitung"]},
+  {name:"CannaZen",net:"Adcell · per Sale",score:8.4,price:0,badge:"",hl:["Rezept + Blüten-Bestellung","Transparente Konditionen"]},
 ];
-const rankOrder=products.map(p=>p.name);
+/* ===== Produkte je Kategorie (alle Marken mit Partnerprogramm) ===== */
+const productData={
+  cbd:[
+    {name:"Nordic Oil Premium 20%",brand:"Vollspektrum · 10 ml · eigenes Programm",score:9.4,price:54.90,badge:"win",hl:["bis 50% Provision","Schneller Effekt"]},
+    {name:"Hempamed Gold 20%",brand:"Vollspektrum · 10 ml · Adcell",score:9.2,price:49.95,badge:"deal",hl:["Ø Warenkorb 73€","Lab-getestet"]},
+    {name:"CBD Vital Naturextrakt 18%",brand:"Bio · 10 ml · Adcell/Belboon",score:9.0,price:44.90,badge:"",hl:["Bio-Qualität","Mild"]},
+    {name:"Cannadoca 15%",brand:"Vollspektrum · 10 ml · Adcell",score:8.6,price:39.90,badge:"",hl:["bis 50% Provision","Vegan"]},
+    {name:"earthpower CBD 10%",brand:"Einsteiger · 10 ml · Adcell",score:8.2,price:29.90,badge:"",hl:["Ideal für Einsteiger","Preiswert"]},
+  ],
+  vaporizer:[
+    {name:"Storz & Bickel Mighty+",brand:"Portabel · via Zamnesia/RQS",score:9.5,price:279.00,badge:"win",hl:["Top Dampfqualität","Hybrid-Heizung"]},
+    {name:"Volcano Hybrid",brand:"Desktop · via Zamnesia/RQS",score:9.4,price:599.00,badge:"",hl:["Referenz-Desktop","App-Steuerung"]},
+    {name:"S&B Venty",brand:"Portabel · via Zamnesia/RQS",score:9.3,price:399.00,badge:"",hl:["Schnell aufgeheizt","Starker Luftstrom"]},
+    {name:"DynaVap M",brand:"Manuell · via Zamnesia",score:8.4,price:75.00,badge:"deal",hl:["Bestes Preis/Leistung","Ohne Akku"]},
+  ],
+  seeds:[
+    {name:"RQS Northern Light Auto",brand:"Autoflower · Adcell",score:9.3,price:29.95,badge:"win",hl:["Anfängerfreundlich","Robust"]},
+    {name:"Zamnesia Blue Dream",brand:"Feminisiert · eigenes Programm",score:9.0,price:34.95,badge:"",hl:["Großes Sortiment","Hoher Ertrag"]},
+    {name:"Kannabia Gorilla",brand:"Feminisiert · Adcell",score:8.7,price:27.50,badge:"deal",hl:["20% Provision","Aromatisch"]},
+    {name:"RQS Quick One Auto",brand:"Autoflower · Adcell",score:8.5,price:24.95,badge:"",hl:["Schnelle Ernte","Kompakt"]},
+  ],
+  grow:[
+    {name:"Komplett-Grow-Set 60×60",brand:"Zelt+LED+Abluft · via Zamnesia",score:9.1,price:299.00,badge:"win",hl:["Alles-drin-Set","Für Einsteiger"]},
+    {name:"Grow-Zelt 80×80",brand:"Mylar · via Zamnesia",score:8.8,price:99.00,badge:"deal",hl:["Robust","Lichtdicht"]},
+    {name:"LED-Board 240W",brand:"Vollspektrum · via Zamnesia",score:8.9,price:189.00,badge:"",hl:["Effizient","Wenig Wärme"]},
+    {name:"AKF-Set Abluft",brand:"Lüfter+Filter · via Zamnesia",score:8.5,price:89.00,badge:"",hl:["Geruchsneutral","Leise"]},
+  ],
+};
 const fmt=n=>n.toFixed(2).replace('.',',')+' €';
 const tag=b=>b==='win'?'<span class="tag win">Testsieger</span>':b==='deal'?'<span class="tag deal">Preis-Tipp</span>':'';
 
-function render(list){
+/* ---- product table ---- */
+let curTab='cbd',curSort='rank';
+function renderTable(){
+  const base=productData[curTab];const order=base.map(p=>p.name);
+  let l=[...base];
+  if(curSort==='score')l.sort((a,b)=>b.score-a.score);
+  else if(curSort==='price')l.sort((a,b)=>a.price-b.price);
+  else l.sort((a,b)=>order.indexOf(a.name)-order.indexOf(b.name));
   const t=document.getElementById('table');
   t.querySelectorAll('.trow:not(.head)').forEach(e=>e.remove());
-  list.forEach((p,i)=>{
-    const row=document.createElement('div');
-    row.className='trow';
-    row.innerHTML=`
-      <div class="rank ${i===0?'top':''}">${i+1}</div>
-      <div class="prodcell"><div class="pn">${p.name} ${tag(p.badge)}</div><div class="pb">${p.brand}</div></div>
-      <div class="scorepill">${p.score.toString().replace('.',',')}<small>/ 10</small></div>
-      <div class="hl">${p.hl.map(h=>`<span>${h}</span>`).join('')}</div>
-      <div class="price pricecell">${fmt(p.price)}<small>Bestpreis</small></div>
-      <a href="#" class="btn btn-primary">Angebot ↗</a>`;
-    t.appendChild(row);
+  l.forEach((p,i)=>{
+    const r=document.createElement('div');r.className='trow';
+    r.innerHTML=`<div class="rank ${i===0?'top':''}">${i+1}</div>
+    <div class="prodcell"><div class="pn">${p.name} ${tag(p.badge)}</div><div class="pb">${p.brand}</div></div>
+    <div class="scorepill">${p.score.toString().replace('.',',')}<small>/ 10</small></div>
+    <div class="hl">${p.hl.map(h=>`<span>${h}</span>`).join('')}</div>
+    <div class="price pricecell">${fmt(p.price)}<small>ab</small></div>
+    <a href="#" class="btn btn-primary">Angebot ↗</a>`;
+    t.appendChild(r);
   });
 }
-function sortBy(key){
-  let l=[...products];
-  if(key==='score')l.sort((a,b)=>b.score-a.score);
-  else if(key==='price')l.sort((a,b)=>a.price-b.price);
-  else l.sort((a,b)=>rankOrder.indexOf(a.name)-rankOrder.indexOf(b.name));
-  render(l);
-}
-document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{
-  const k=b.dataset.sort;
-  document.querySelectorAll('.tbl-tools button').forEach(x=>x.classList.toggle('on',x.dataset.sort===k));
-  sortBy(k);
+document.querySelectorAll('#tabs button').forEach(b=>b.addEventListener('click',()=>{
+  curTab=b.dataset.tab;document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x===b));renderTable();
 }));
-render(products);
+document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{
+  curSort=b.dataset.sort;document.querySelectorAll('.tbl-tools [data-sort]').forEach(x=>x.classList.toggle('on',x.dataset.sort===curSort));renderTable();
+}));
+document.querySelectorAll('.cat[data-tab]').forEach(c=>c.addEventListener('click',()=>{
+  const tb=c.dataset.tab;curTab=tb;document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x.dataset.tab===tb));renderTable();
+}));
+renderTable();
 
-/* ---------- chips scroll ---------- */
+/* ---- telemed table ---- */
+let tSort='rank';
+function renderTele(){
+  const order=telemed.map(p=>p.name);let l=[...telemed];
+  if(tSort==='score')l.sort((a,b)=>b.score-a.score);
+  else if(tSort==='price')l.sort((a,b)=>(a.price||999)-(b.price||999));
+  else l.sort((a,b)=>order.indexOf(a.name)-order.indexOf(b.name));
+  const t=document.getElementById('telemed');
+  t.querySelectorAll('.trow:not(.head)').forEach(e=>e.remove());
+  l.forEach((p,i)=>{
+    const r=document.createElement('div');r.className='trow';
+    r.innerHTML=`<div class="rank ${i===0?'top':''}">${i+1}</div>
+    <div class="prodcell"><div class="pn">${p.name} ${tag(p.badge)}</div><div class="pb">${p.net}</div></div>
+    <div class="scorepill">${p.score.toString().replace('.',',')}<small>/ 10</small></div>
+    <div class="hl">${p.hl.map(h=>`<span>${h}</span>`).join('')}</div>
+    <div class="price pricecell">${p.price?('Erstgespräch '+fmt(p.price)):'Preis variiert'}<small>Konditionen prüfen</small></div>
+    <a href="#" class="btn btn-primary">Zum Anbieter ↗</a>`;
+    t.appendChild(r);
+  });
+}
+document.querySelectorAll('[data-tsort]').forEach(b=>b.addEventListener('click',()=>{
+  tSort=b.dataset.tsort;document.querySelectorAll('[data-tsort]').forEach(x=>x.classList.toggle('on',x.dataset.tsort===tSort));renderTele();
+}));
+renderTele();
+
+/* ---- chips & reveal ---- */
 document.querySelectorAll('.chip[data-go]').forEach(c=>c.addEventListener('click',()=>{
   const el=document.getElementById(c.dataset.go);if(el)el.scrollIntoView({behavior:'smooth'});
 }));
-
-/* ---------- reveal on scroll ---------- */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
 </script>
 </body>

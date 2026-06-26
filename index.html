@@ -267,7 +267,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
     </div>
     <div class="cat-grid">
       <a class="cat feat reveal" href="#rezept"><span class="pill">Neu</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3h8v4H8zM6 7h12v14H6z"/><path d="M12 11v6M9 14h6"/></svg></div><h3>Cannabis auf Rezept</h3><span>4 Telemedizin-Anbieter</span></a>
-      <a class="cat feat reveal" href="#rezept"><span class="pill">Neu</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h16v11H4z"/><path d="M4 9l2-5h12l2 5M12 13v3M10.5 14.5h3"/></svg></div><h3>Versand-Apotheken</h3><span>Cannabis-Apotheken</span></a>
+      <a class="cat feat reveal" href="#apotheken"><span class="pill">Neu</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9h16v11H4z"/><path d="M4 9l2-5h12l2 5M12 13v3M10.5 14.5h3"/></svg></div><h3>Versand-Apotheken</h3><span>Cannabis-Apotheken</span></a>
       <a class="cat reveal" href="#bestenliste" data-tab="cbd"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6v4l3 5v7a2 2 0 01-2 2H8a2 2 0 01-2-2v-7l3-5V3z"/><path d="M6 14h12"/></svg></div><span class="arr">↗</span><h3>CBD-Öl</h3><span>5 Top-Marken</span></a>
       <a class="cat reveal" href="#bestenliste" data-tab="vaporizer"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M12 6v4"/></svg></div><span class="arr">↗</span><h3>Vaporizer</h3><span>4 Geräte</span></a>
       <a class="cat reveal" href="#bestenliste" data-tab="grow"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M4 7l3-4h10l3 4M9 12h6"/></svg></div><span class="arr">↗</span><h3>Grow-Boxen</h3><span>4 Sets</span></a>
@@ -291,6 +291,21 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;margin-top:30px}
       <div class="trow head"><span>#</span><span>Anbieter</span><span data-tsort="score">Score ▾</span><span class="h-hl">Ablauf</span><span class="h-price" data-tsort="price">Kosten ab</span><span></span></div>
     </div>
     <div class="note reveal"><b>Rechtlicher Hinweis (HWG):</b> Medizinal-Cannabis ist verschreibungspflichtig; über die Eignung entscheidet ausschließlich ärztliches Fachpersonal. Diese Übersicht ist redaktionell, unabhängig und enthält keine Heilversprechen. Alle gelisteten Anbieter führen ein öffentliches Affiliate-Programm; mit ↗ markierte Links sind Partnerlinks. Inhalte ab 18 Jahren.</div>
+  </div>
+</section>
+
+<section id="apotheken">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">Versand-Apotheken</span><h2>Apotheken mit Cannabis-Versand</h2>
+    <p>Etablierte Versand-Apotheken zum Einlösen von Privat- & E-Rezept. Alle mit öffentlichem Partnerprogramm. Redaktioneller Überblick, keine Therapieempfehlung.</p></div></div>
+    <div class="tbl-tools reveal"><span class="lbl">Sortieren:</span>
+      <button class="on" data-asort="rank">Empfehlung</button>
+      <button data-asort="score">Bewertung</button>
+    </div>
+    <div class="table reveal" id="apo">
+      <div class="trow head"><span>#</span><span>Apotheke</span><span data-asort="score">Score ▾</span><span class="h-hl">Highlights</span><span class="h-price">Versand</span><span></span></div>
+    </div>
+    <div class="note reveal"><b>Hinweis:</b> Informationen zum Einlösen von E-Rezepten erfolgen gemäß Apothekenrecht allgemein. Alle gelisteten Apotheken führen ein Affiliate-Programm (i.d.R. über AWIN); mit ↗ markierte Links sind Partnerlinks.</div>
   </div>
 </section>
 
@@ -493,6 +508,29 @@ document.querySelectorAll('[data-tsort]').forEach(b=>b.addEventListener('click',
   tSort=b.dataset.tsort;document.querySelectorAll('[data-tsort]').forEach(x=>x.classList.toggle('on',x.dataset.tsort===tSort));renderTele();
 }));
 renderTele();
+
+/* ---- apotheken table (nur Anbieter mit Affiliate-Programm) ---- */
+const apo=[
+  {name:"DocMorris",net:"AWIN · bis 14% Neukunde",score:9.3,badge:"win",ship:"1–2 Tage",hl:["E-Rezept & Privatrezept","Großes Sortiment"]},
+  {name:"Shop-Apotheke (Redcare)",net:"AWIN",score:9.2,badge:"deal",ship:"1–2 Tage",hl:["Riesiges Sortiment","App + Bonus"]},
+  {name:"medpex",net:"AWIN",score:8.9,badge:"",ship:"1–3 Tage",hl:["Stark im Preis","Zuverlässig"]},
+  {name:"mycare",net:"AWIN",score:8.6,badge:"",ship:"1–3 Tage",hl:["Gute Konditionen","Persönlicher Service"]},
+];
+let aSort='rank';
+function renderApo(){
+  const order=apo.map(p=>p.name);let l=[...apo];
+  if(aSort==='score')l.sort((a,b)=>b.score-a.score);else l.sort((a,b)=>order.indexOf(a.name)-order.indexOf(b.name));
+  const t=document.getElementById('apo');t.querySelectorAll('.trow:not(.head)').forEach(e=>e.remove());
+  l.forEach((p,i)=>{const r=document.createElement('div');r.className='trow';
+    r.innerHTML=`<div class="rank ${i===0?'top':''}">${i+1}</div>
+    <div class="prodcell"><div class="pn">${p.name} ${tag(p.badge)}</div><div class="pb">${p.net}</div></div>
+    <div class="scorepill">${p.score.toString().replace('.',',')}<small>/ 10</small></div>
+    <div class="hl">${p.hl.map(h=>`<span>${h}</span>`).join('')}</div>
+    <div class="price pricecell">${p.ship}<small>Versand</small></div>
+    <a href="#" class="btn btn-primary">Zur Apotheke ↗</a>`;t.appendChild(r);});
+}
+document.querySelectorAll('[data-asort]').forEach(b=>b.addEventListener('click',()=>{aSort=b.dataset.asort;document.querySelectorAll('[data-asort]').forEach(x=>x.classList.toggle('on',x.dataset.asort===aSort));renderApo();}));
+renderApo();
 
 /* ---- chips & reveal ---- */
 document.querySelectorAll('.chip[data-go]').forEach(c=>c.addEventListener('click',()=>{
